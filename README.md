@@ -13,7 +13,10 @@ Mentor: Muzammil
 Overview of the Project
 
 Project: Computer Vision Task
-Project output: <img width="1710" alt="Screenshot 2024-06-13 at 7 11 01 PM" src="https://github.com/Karthik2828/CODETECH-task4/assets/116016314/7afdf768-cdfd-451b-ad2c-3caa094f9cc4">
+
+Project output:
+
+<img width="1710" alt="Screenshot 2024-06-13 at 7 11 01 PM" src="https://github.com/Karthik2828/CODETECH-task4/assets/116016314/7afdf768-cdfd-451b-ad2c-3caa094f9cc4">
 
 
 Objective
