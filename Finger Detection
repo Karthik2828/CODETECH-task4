@@ -1,0 +1,60 @@
+import cv2
+import mediapipe as mp
+
+# Initialize the video capture object with the path to the video file
+cap = cv2.VideoCapture("/Users/tejakarthik/Desktop/internship/Visual understanding/fingers.mp4")
+mpHands = mp.solutions.hands
+hands = mpHands.Hands()
+mpDraw = mp.solutions.drawing_utils
+fingerCoordinates = [(8, 6), (12, 10), (16, 14), (20, 18)]
+thumbCoordinate = (4,2)
+
+# Main loop to process each frame of the video
+while True:
+    # Read a frame from the video
+    success, img = cap.read()
+    if not success:
+        break
+
+    # Convert the frame from BGR to RGB format
+    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    # Process the frame to detect hands and landmarks
+    results = hands.process(imgRGB)
+    multiLandMarks = results.multi_hand_landmarks
+
+    # If hands are detected, draw landmarks and count fingers
+    if multiLandMarks:
+        handPoints = []
+        for handLms in multiLandMarks:
+            mpDraw.draw_landmarks(img, handLms, mpHands.HAND_CONNECTIONS)
+
+            for idx, lm in enumerate(handLms.landmark):
+                # Convert landmark coordinates to integers and append to handPoints list
+                h, w, c = img.shape
+                cx, cy = int(lm.x * w), int(lm.y * h)
+                handPoints.append((cx, cy))
+
+        # Draw circles at each landmark point
+        for point in handPoints:
+            cv2.circle(img, point, 10, (0, 0, 255), cv2.FILLED)
+
+        # Count the number of fingers raised based on predefined coordinates
+        upCount = 0
+        for coordinate in fingerCoordinates:
+            if handPoints[coordinate[0]][1] < handPoints[coordinate[1]][1]:
+                upCount += 1
+        if handPoints[thumbCoordinate[0]][0] > handPoints[thumbCoordinate[1]][0]:
+            upCount += 1
+
+        # Display the number of fingers raised on the image
+        cv2.putText(img, str(upCount), (150,150), cv2.FONT_HERSHEY_PLAIN, 12, (255,0,0), 12)
+
+    # Show the processed frame with finger count overlay
+    cv2.imshow("Finger Counter", img)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Release the video capture object and close all windows when done
+cap.release()
+cv2.destroyAllWindows()
