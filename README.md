@@ -1,4 +1,4 @@
-<img width="1710" alt="Screenshot 2024-06-13 at 7 11 01 PM" src="https://github.com/Karthik2828/CODETECH-task4/assets/116016314/b06a57de-6ab5-4f32-9a7d-401a2398eb3e">Name: B Teja Karthik
+Name: B Teja Karthik
 Company: CODETECH IT SOLUTIONS
 ID: CT12DS513
 Domain: Artificial Intelligence
