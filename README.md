@@ -1,8 +1,13 @@
 Name: B Teja Karthik
+
 Company: CODETECH IT SOLUTIONS
+
 ID: CT12DS513
+
 Domain: Artificial Intelligence
+
 Duration: June to August 2024
+
 Mentor: Muzammil
 
 Overview of the Project
