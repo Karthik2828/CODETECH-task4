@@ -23,21 +23,37 @@ The objective of this project is to develop an efficient computer vision algorit
 Key Activities
 
 1.Video Processing:
+ 
   -Reading each frame from the video.
+  
   -Converting the frame to RGB format for compatibility with the hand detection model.
+
 2.Hand Detection:
+  
   -Processing each frame to detect hand landmarks using the hand detection model.
+  
   -Extracting landmark information for each detected hand.
+
 3.Drawing Landmarks:
+ 
   -Drawing the landmarks on the frame using OpenCV's drawing functions.
+
 4.Finger Tracking:
+ 
   -Extracting finger coordinates and thumb coordinate.
+  
   -Calculating the number of raised fingers based on their relative positions.
+
 5.Displaying Results:
+  
   -Drawing circles on detected finger points.
+  
   -Displaying the count of raised fingers on the frame.
+
 6.User Interaction:
+  
   -Continuously displaying the processed frames and updating the display.
+  
   -Exiting the loop if the user presses any key.
 
 
@@ -45,13 +61,17 @@ Technologies Used
 
 
 1.OpenCV (cv2): 
+
 OpenCV (Open Source Computer Vision Library) is a popular open-source computer vision and machine learning software library. In this code, OpenCV is used for video capture, image processing, drawing, and displaying the processed frames.
 
 2.MediaPipe: 
+
 MediaPipe is an open-source framework for building cross-platform, scalable, and high- performing pipelines for inference in various perception tasks. Here, MediaPipe is specifically used for hand tracking and landmark detection.
 
 3.Python:
+
 Python is the programming language used to write the code. Python is widely used in the field of computer vision due to its simplicity, extensive libraries, and readability.
 
 4.Hand Tracking and Finger Detection Algorithms: 
+
 The code implements algorithms for hand tracking and finger detection. These algorithms are based on machine learning models and computer vision techniques provided by the MediaPipe library.
